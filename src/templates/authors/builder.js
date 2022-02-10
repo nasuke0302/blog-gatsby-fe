@@ -6,7 +6,7 @@ const createAuthors = async ({ createPage, data }) => {
 			const { current } = node.slug;
 			createPage({
 				path: `/authors/${current}`,
-				component: path(`./src/templates/authors.tsx`),
+				component: path.resolve(`./src/templates/authors/index.tsx`),
 				context: { slug: current }
 			});
 		})

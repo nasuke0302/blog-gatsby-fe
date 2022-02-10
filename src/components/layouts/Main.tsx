@@ -32,8 +32,8 @@ const MainLayout = ({ children }) => {
 			</Helmet>
 
 			<nav className="p-4 pl-8 flex flex-row flex-nowrap justify-center md:justify-start items-center bg-green-600">
-				{links.map((link) => (
-					<a href={link.href} className="text-white font-5 no-underline p-4">
+				{links.map((link, i) => (
+					<a key={i} href={link.href} className="text-white font-5 no-underline p-4">
 						{link.text}
 					</a>
 				))}
@@ -43,8 +43,8 @@ const MainLayout = ({ children }) => {
 
 			<footer className="p-8 bg-green-800">
 				<div className="flex flex-row flex-nowrap justify-center align-center">
-					{links.map((link) => (
-						<a href={link.href} className="text-white font-5 no-underline p-4">
+					{links.map((link, i) => (
+						<a key={i} href={link.href} className="text-white font-5 no-underline p-4">
 							{link.text}
 						</a>
 					))}

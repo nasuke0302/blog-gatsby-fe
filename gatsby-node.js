@@ -1,5 +1,5 @@
-const path = require('path');
-const { createAuthors } = require('./src/templates/builder');
+const { createAuthors } = require('./src/templates/authors/builder');
+const { createPosts } = require('./src/templates/posts/builder');
 
 const gqlQuery = `
 {
@@ -12,6 +12,15 @@ const gqlQuery = `
       }
     }
   }
+	allSanityPost {
+		edges {
+			node {
+				slug {
+					current
+				}
+			}
+		}
+	}
 }`;
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -19,15 +28,8 @@ exports.createPages = async ({ actions, graphql }) => {
 		const { createPage } = actions;
 		const { data } = await graphql(gqlQuery);
 
-		//await createAuthors({ createPage, data });
-		data.allSanityAuthor.edges.map(({ node }) => {
-			const { current } = node.slug;
-			createPage({
-				path: `/authors/${current}`,
-				component: path.resolve(`./src/templates/authors.tsx`),
-				context: { slug: current }
-			});
-		});
+		await createAuthors({ createPage, data });
+		await createPosts({ createPage, data });
 	} catch (error) {
 		console.error(error);
 	}

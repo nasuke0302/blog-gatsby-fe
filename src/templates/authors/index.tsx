@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import PostsList from '../components/posts/List';
-import RichText from '../components/RichText';
-import { SanityAuthor, SanityPost } from '../generated/graphqlTypes';
+import PostsList from '../../components/posts/List';
+import RichText from '../../components/RichText';
+import { SanityAuthor, SanityPost } from '../../generated/graphqlTypes';
 
 const Authors: React.FC<{
 	data: {
