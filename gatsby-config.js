@@ -15,6 +15,8 @@ module.exports = {
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
+		`gatsby-plugin-graphql-loader`,
+		`gatsby-plugin-postcss`,
 		{
 			resolve: `gatsby-source-sanity`,
 			options: { ...sanityConfig }
