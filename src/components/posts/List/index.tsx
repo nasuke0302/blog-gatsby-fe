@@ -1,7 +1,8 @@
 import React from 'react';
+import { SanityPost } from '../../../generated/graphqlTypes';
 import Item from '../Item';
 
-const List = ({ title, posts }) => {
+const List: React.FC<{ title: String; posts: { node: SanityPost }[] }> = ({ title, posts }) => {
 	const query = '';
 	const handleSearch = () => {};
 	return (

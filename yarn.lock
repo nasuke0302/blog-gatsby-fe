@@ -1932,6 +1932,26 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
+"@portabletext/react@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-1.0.2.tgz#5a06986b09417d5af84d04d9fcbc51de9a97d1e6"
+  integrity sha512-XKY8gvUPjDIr+2dA62KUWvFzuCgVVQV8Z0oR2KH34eJnhUn9oWQwMRCzlnUZ8yeBcSBrvgUp2gwQ6RyAYVuWgA==
+  dependencies:
+    "@portabletext/toolkit" "^1.0.3"
+    "@portabletext/types" "^1.0.2"
+
+"@portabletext/toolkit@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@portabletext/toolkit/-/toolkit-1.0.3.tgz#9ce5272c4370e973f78c8069012ecaf0f80740c4"
+  integrity sha512-HXs8ki+KtKi49SGLr2xrFSSYaUEpAYTsUsc3IKuFdjvWQxfxtuQKJrk7zv8BnA2ATfriUpD13cKI9Ny0XD4D6A==
+  dependencies:
+    "@portabletext/types" "^1.0.0"
+
+"@portabletext/types@^1.0.0", "@portabletext/types@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-1.0.2.tgz#98c0c04fc70496f85fde46415d029e8f9d652d62"
+  integrity sha512-Q1+7rrMf1N2jM6e6vwgZ22ogEFENEM33y9J1CXy+im89zrBH3MGntdqG+FbH5qcyKpPzshHGmdWEshh1dzfF+g==
+
 "@rexxars/eventsource-polyfill@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@rexxars/eventsource-polyfill/-/eventsource-polyfill-1.0.0.tgz#ab46f2f44da23aedd6f51f13d92a194a5367525b"
@@ -9608,6 +9628,21 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.10.tgz#0fe26db4fa85d9dbb8624729580e90e7159a59a6"
   integrity sha512-mKR90fX7Pm5seCOfz8q9F+66VCc1PGsWSBxKbITjfKVQHMNF2zudxHnMdJiB1fRCb+XsbQV9sO9DCkgsMQgBIA==
 
+react-fast-compare@^3.1.1:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
+  integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
+
+react-helmet@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-6.1.0.tgz#a750d5165cb13cf213e44747502652e794468726"
+  integrity sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.7.2"
+    react-fast-compare "^3.1.1"
+    react-side-effect "^2.1.0"
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -9622,6 +9657,11 @@ react-refresh@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.9.0.tgz#71863337adc3e5c2f8a6bfddd12ae3bfe32aafbf"
   integrity sha512-Gvzk7OZpiqKSkxsQvO/mbTN1poglhmAV7gR/DdIrRrSMXraRQQlfikRJOr3Nb9GTMPC5kof948Zy6jJZIFtDvQ==
+
+react-side-effect@^2.1.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.1.tgz#66c5701c3e7560ab4822a4ee2742dee215d72eb3"
+  integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
 
 react@^17.0.1:
   version "17.0.2"

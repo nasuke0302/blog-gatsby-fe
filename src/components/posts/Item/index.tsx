@@ -1,10 +1,15 @@
 import React from 'react';
 import { navigate } from '@reach/router';
+import { getImage } from 'gatsby-plugin-image';
 import Category from '../Category';
+import { SanityPost } from '../../../generated/graphqlTypes';
+import { toPlainText } from '../../RichText';
 
-const Item = ({ post }) => {
-	const image = '';
-	const truncatedBody = post.body;
+const Item: React.FC<{ post: SanityPost }> = ({ post }) => {
+	//@ts-ignore
+	const image = getImage(post.mainImage.asset);
+	const truncatedBody = toPlainText(post._rawBody).slice(0, 200);
+
 	return (
 		<div
 			onClick={() => navigate(`/posts/${post.slug.current}`)}
@@ -14,7 +19,7 @@ const Item = ({ post }) => {
 				{image && (
 					<div
 						className="w-full h-full bg-gray-200 bg-cover bg-repeat bg-center"
-						style={{ backgroundImage: `url(${image})` }}
+						style={{ backgroundImage: `url(${image.images.fallback.src})` }}
 					/>
 				)}
 			</div>
@@ -28,7 +33,7 @@ const Item = ({ post }) => {
 
 				{post.author && <span className="text-gray-700 mb-3 text-xs">By {post.author.name}</span>}
 
-				{post.bodyRaw && <p className="grow">{truncatedBody}...</p>}
+				{post._rawBody && <p className="grow">{truncatedBody}...</p>}
 
 				{post.categories && (
 					<div className="flex flex-row flex-wrap justify-start items-start gap-2 mt-4">

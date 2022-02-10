@@ -5539,7 +5539,19 @@ export type WebPOptions = {
   quality?: InputMaybe<Scalars['Int']>;
 };
 
+export type SiteSettingsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SiteSettingsQuery = { __typename?: 'Query', sanitySiteSettings?: { __typename?: 'SanitySiteSettings', title?: string | null, description?: string | null, keywords?: Array<string | null> | null } | null };
+
 export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type PostsQuery = { __typename?: 'Query', allSanityPost: { __typename?: 'SanityPostConnection', edges: Array<{ __typename?: 'SanityPostEdge', node: { __typename?: 'SanityPost', id: string, title?: string | null, _updatedAt?: any | null, _rawBody?: any | null, slug?: { __typename?: 'SanitySlug', current?: string | null } | null, categories?: Array<{ __typename?: 'SanityCategory', title?: string | null } | null> | null, author?: { __typename?: 'SanityAuthor', name?: string | null, id: string } | null, mainImage?: { __typename?: 'SanityImage', asset?: { __typename?: 'SanityImageAsset', url?: string | null, gatsbyImageData: any } | null } | null } }> } };
+
+export type AuthorAndAuthorPostsBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type AuthorAndAuthorPostsBySlugQuery = { __typename?: 'Query', sanityAuthor?: { __typename?: 'SanityAuthor', name?: string | null, _rawBio?: any | null, image?: { __typename?: 'SanityImage', asset?: { __typename?: 'SanityImageAsset', gatsbyImageData: any } | null } | null } | null, allSanityPost: { __typename?: 'SanityPostConnection', edges: Array<{ __typename?: 'SanityPostEdge', node: { __typename?: 'SanityPost', title?: string | null, _rawBody?: any | null, slug?: { __typename?: 'SanitySlug', current?: string | null } | null, mainImage?: { __typename?: 'SanityImage', asset?: { __typename?: 'SanityImageAsset', gatsbyImageData: any } | null } | null, categories?: Array<{ __typename?: 'SanityCategory', title?: string | null } | null> | null } }> } };
