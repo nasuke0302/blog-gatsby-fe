@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { graphql, Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Category from '../../components/posts/Category';
 import RichText from '../../components/RichText';
@@ -45,12 +45,12 @@ const Post: React.FC<{
 						{sanityPost.author && (
 							<p className="text-white font-light">
 								Written by{' '}
-								<a
+								<Link
 									className="text-inherit font-bold hover:underline"
-									href={`/authors/${sanityPost.author.slug.current}`}
+									to={`/authors/${sanityPost.author.slug.current}`}
 								>
 									{sanityPost.author.name}
-								</a>
+								</Link>
 							</p>
 						)}
 					</div>

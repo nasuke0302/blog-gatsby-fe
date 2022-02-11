@@ -1,6 +1,6 @@
 import React from 'react';
-import { navigate } from '@reach/router';
-import { getImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Category from '../Category';
 import { SanityPost } from '../../../generated/graphqlTypes';
 import { toPlainText } from '../../RichText';
@@ -11,15 +11,16 @@ const Item: React.FC<{ post: SanityPost }> = ({ post }) => {
 	const truncatedBody = toPlainText(post._rawBody).slice(0, 200);
 
 	return (
-		<div
-			onClick={() => navigate(`/posts/${post.slug.current}`)}
+		<Link
+			to={`/posts/${post.slug.current}`}
 			className="flex flex-col justify-start align-start cursor-pointer bg-white rounded-md shadow-sm hover:shadow-md transition ease-in-out duration-200"
 		>
 			<div className="w-full h-48">
 				{image && (
-					<div
+					<GatsbyImage
+						image={image}
+						alt="photo"
 						className="w-full h-full bg-gray-200 bg-cover bg-repeat bg-center"
-						style={{ backgroundImage: `url(${image.images.fallback.src})` }}
 					/>
 				)}
 			</div>
@@ -43,7 +44,7 @@ const Item: React.FC<{ post: SanityPost }> = ({ post }) => {
 					</div>
 				)}
 			</div>
-		</div>
+		</Link>
 	);
 };
 export default Item;

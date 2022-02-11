@@ -25,7 +25,7 @@ const Authors: React.FC<{
 			<div className="grid grid-cols-1 md:grid-cols-[250px_auto] gap-8">
 				{image && (
 					<GatsbyImage
-						class="rounded-full border border-solid border-cyan-600 aspect-square"
+						className="rounded-full border border-solid border-cyan-600 aspect-square"
 						image={image}
 						alt={sanityAuthor.name}
 					/>
@@ -59,7 +59,7 @@ export const query = graphql`
 			_rawBio
 			image {
 				asset {
-					gatsbyImageData(width: 200)
+					gatsbyImageData(width: 350)
 				}
 			}
 		}
@@ -73,7 +73,7 @@ export const query = graphql`
 					_rawBody
 					mainImage {
 						asset {
-							gatsbyImageData(width: 200)
+							gatsbyImageData(width: 300)
 						}
 					}
 					categories {

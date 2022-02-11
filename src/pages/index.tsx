@@ -37,7 +37,7 @@ export const pageQuery = graphql`
 					mainImage {
 						asset {
 							url
-							gatsbyImageData(width: 200)
+							gatsbyImageData(width: 300)
 						}
 					}
 				}
