@@ -1,10 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { SiteSettingsQuery } from '../../generated/graphqlTypes';
 import '../../styles/global.css';
 
-const links = [{ href: '/', text: 'Home' }];
+const links = [
+	{ href: '/', text: 'Home', icon: 'la-home' },
+	{ href: '/about', text: 'About', icon: 'la-lightbulb' }
+];
 
 const MainLayout = ({ children }) => {
 	const data = useStaticQuery<SiteSettingsQuery>(graphql`
@@ -29,13 +32,22 @@ const MainLayout = ({ children }) => {
 					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
 					rel="stylesheet"
 				/>
+				<link
+					rel="stylesheet"
+					href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+				></link>
 			</Helmet>
 
 			<nav className="p-4 pl-8 flex flex-row flex-nowrap justify-center md:justify-start items-center bg-green-600">
 				{links.map((link, i) => (
-					<a key={i} href={link.href} className="text-white font-5 no-underline p-4">
+					<Link
+						key={i}
+						to={link.href}
+						className="text-white font-5 no-underline p-4 hover:bg-green-300 hover:text-gray-600 rounded-md transition"
+					>
+						<i className={`las ${link.icon} block text-center`}></i>
 						{link.text}
-					</a>
+					</Link>
 				))}
 			</nav>
 
@@ -44,10 +56,21 @@ const MainLayout = ({ children }) => {
 			<footer className="p-8 bg-green-800">
 				<div className="flex flex-row flex-nowrap justify-center align-center">
 					{links.map((link, i) => (
-						<a key={i} href={link.href} className="text-white font-5 no-underline p-4">
+						<Link
+							key={i}
+							to={link.href}
+							className="text-white font-5 no-underline px-4 py-2 hover:bg-green-300 hover:text-gray-600 rounded-md transition"
+						>
 							{link.text}
-						</a>
+						</Link>
 					))}
+					<a
+						href="https://icons8.com"
+						target="_blank"
+						className="text-white font-5 no-underline px-4 py-2 hover:bg-green-300 hover:text-gray-600 rounded-md transition"
+					>
+						icons8
+					</a>
 				</div>
 				<div className="m-auto text-center">
 					<p className="text-white">&copy; {new Date().getFullYear()} Nasuke</p>
