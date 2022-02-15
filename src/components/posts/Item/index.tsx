@@ -13,7 +13,7 @@ const Item: React.FC<{ post: SanityPost }> = ({ post }) => {
 	return (
 		<Link
 			to={`/posts/${post.slug.current}`}
-			className="flex flex-col justify-start align-start cursor-pointer bg-white rounded-md shadow-sm hover:shadow-md transition ease-in-out duration-200"
+			className="flex flex-col justify-start align-start cursor-pointer bg-white rounded-md shadow-sm hover:shadow-md hover:-translate-y-2 transition ease-in-out duration-200"
 		>
 			<div className="w-full h-48">
 				{image && (

@@ -6,7 +6,8 @@ import '../../styles/global.css';
 
 const links = [
 	{ href: '/', text: 'Home', icon: 'la-home' },
-	{ href: '/about', text: 'About', icon: 'la-lightbulb' }
+	{ href: '/about', text: 'About', icon: 'la-lightbulb' },
+	{ href: '/authors', text: 'Our Experts', icon: 'la-user-edit' }
 ];
 
 const MainLayout = ({ children }) => {
@@ -38,14 +39,14 @@ const MainLayout = ({ children }) => {
 				></link>
 			</Helmet>
 
-			<nav className="p-4 pl-8 flex flex-row flex-nowrap justify-center md:justify-start items-center bg-green-600">
+			<nav className="px-4 py-2 pl-8 flex flex-row flex-nowrap justify-center md:justify-start items-center bg-green-600 shadow-md shadow-zinc-400">
 				{links.map((link, i) => (
 					<Link
 						key={i}
 						to={link.href}
 						className="text-white font-5 no-underline p-4 hover:bg-green-300 hover:text-gray-600 rounded-md transition"
 					>
-						<i className={`las ${link.icon} block text-center`}></i>
+						<i className={`las ${link.icon} block text-center pr-1`}></i>
 						{link.text}
 					</Link>
 				))}
