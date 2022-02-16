@@ -10,13 +10,13 @@ const BlockContentSection: React.FC<{ section: SanityBlockContentSection }> = ({
 
 	//@ts-ignore
 	const img = getImage(image.asset);
-	const direction = imagePosition === 'left' ? 'row' : 'row-reverse';
+	//const direction = imagePosition === 'left' ? 'row' : 'row-reverse';
 
 	return (
 		<div className="mb-16 sm:mb-32">
 			{header && <h2 className="text-4xl text-center text-gray-400 mb-4 sm:mb-12">{header}</h2>}
 			<div
-				className={`flex flex-col sm:flex-${direction} flex-nowrap justify-center items-start gap-4 sm:gap-8`}
+				className={`flex flex-col sm:flex-row flex-nowrap justify-center items-start gap-4 sm:gap-8`}
 			>
 				<GatsbyImage image={img} alt="section photo" />
 				<div className="w-full sm:max-w-[45%]">
